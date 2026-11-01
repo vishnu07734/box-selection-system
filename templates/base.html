@@ -1,0 +1,26 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}BoxWise{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="{% url 'dashboard' %}">BoxWise <span>Shipping Optimizer</span></a>
+  <nav>
+    <a href="{% url 'dashboard' %}">Dashboard</a>
+    <a href="{% url 'product_list' %}">Products</a>
+    <a href="{% url 'box_list' %}">Boxes</a>
+    <a href="{% url 'order_create' %}">New order</a>
+    <a href="/admin/">Admin</a>
+  </nav>
+</header>
+<main class="container">
+  {% for message in messages %}<div class="message">{{ message }}</div>{% endfor %}
+  {% block content %}{% endblock %}
+</main>
+<footer>BoxWise · Django demonstration project</footer>
+</body>
+</html>

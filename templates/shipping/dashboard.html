@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Dashboard · BoxWise{% endblock %}
+{% block content %}
+<section class="hero">
+  <div><p class="eyebrow">WAREHOUSE TOOL</p><h1>Choose the right box.<br><em>Ship smarter.</em></h1>
+  <p>Manage products and packaging, then find the lowest-cost box that can hold an order.</p>
+  <a class="button" href="{% url 'order_create' %}">Create an order →</a></div>
+  <div class="hero-art">📦</div>
+</section>
+<div class="stats">
+  <div class="stat"><span>Products</span><strong>{{ product_count }}</strong><a href="{% url 'product_list' %}">Manage →</a></div>
+  <div class="stat"><span>Shipping boxes</span><strong>{{ box_count }}</strong><a href="{% url 'box_list' %}">Manage →</a></div>
+  <div class="stat"><span>Orders</span><strong>{{ order_count }}</strong><a href="{% url 'order_create' %}">Create →</a></div>
+</div>
+<section class="panel"><div class="panel-head"><h2>Recent orders</h2><a href="{% url 'order_create' %}">+ New order</a></div>
+{% if recent_orders %}<table><tr><th>Order</th><th>Created</th><th></th></tr>
+{% for order in recent_orders %}<tr><td>#{{ order.pk }}</td><td>{{ order.created_at|date:"d M Y, H:i" }}</td><td><a href="{% url 'order_detail' order.pk %}">View recommendation →</a></td></tr>{% endfor %}</table>
+{% else %}<p class="muted">No orders yet. Add products and create your first order.</p>{% endif %}</section>
+{% endblock %}

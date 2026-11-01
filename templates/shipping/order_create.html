@@ -1,0 +1,3 @@
+{% extends "base.html" %}{% block title %}New order · BoxWise{% endblock %}
+{% block content %}<p class="eyebrow">ORDER WORKFLOW</p><h1>Create an order</h1><section class="panel narrow"><p class="muted">Select one or more products. The initial quantity is one per selected product. To change quantities, open the order in Django admin.</p>
+<form method="post">{% csrf_token %}{{ form.non_field_errors }}<div class="check-list">{{ form.products }}</div><button class="button">Create order and find a box →</button></form></section>{% endblock %}
