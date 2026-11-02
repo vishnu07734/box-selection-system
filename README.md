@@ -15,8 +15,8 @@ A small Django application for managing products, shipping boxes and orders, the
 
 ## Technology
 
-- Python 3.10+
-- Django 5.x
+- Python 3.13.14
+- Django 5.2.18
 - SQLite
 - HTML, CSS and Django templates
 
@@ -81,18 +81,6 @@ python manage.py test
 
 The tests cover cheapest eligible selection, weight rejection, dimension rejection, rotation, multiple-item placement, aggregated order weight, empty box catalogues and a basic web form flow.
 
-## Repository submission checklist
-
-- [ ] Push the project to your GitHub repository.
-- [ ] Update this README if you change the algorithm or workflow.
-- [ ] Complete `AI_USAGE.md` accurately, including prompts, accepted/rejected output, mistakes and verification.
-- [ ] Export and attach your actual chat transcript yourself, as required by the assignment.
-- [ ] Write your own learning reflection; do not use AI to generate it.
-- [ ] Run the test suite and paste the real terminal output into `TEST_OUTPUT.md` or provide a GitHub Actions run link.
-
-## Security note
-
-This is a local assignment/demo configuration. Before deployment, set `DEBUG=False`, use a secret key from environment variables, configure `ALLOWED_HOSTS`, enable appropriate password validators, and serve static files securely.
 
 ## Optional demo data
 
